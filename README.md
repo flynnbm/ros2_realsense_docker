@@ -25,7 +25,7 @@ Contains:
 - USB 2.0 or 3.0 cable (USB 3.0 strongly preferred if functional, USB 3.0 ports on Raspberry Pi occasionally present issues)
 - Another machine with ROS 2 Jazzy installed (for remote visualization)
 
-## ⚙Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the repository
 
@@ -88,7 +88,7 @@ ros2 topic list
 - Container is configured to source `/root/ros2_ws/install/setup.bash` automatically
 - 'ros2-jazzy-realsense` image is prebuilt, so users don’t need to rebuild anything
 
-## 🧪 Reset Docker Environment (optional)
+## Reset Docker Environment (optional)
 
 To fully reset Docker:
 
