@@ -52,6 +52,8 @@ Place this file in the repository root (next to `docker-compose.yml`).
 ```bash
 docker-compose up -d
 ```
+If docker-compose isn't already installed:
+[Installing Docker & Compose](#-installing-docker--compose-on-the-pi)
 
 Then enter the container:
 
