@@ -36,7 +36,7 @@ cd ros2_realsense_docker
 
 ### 2. Create or edit `cyclonedds.xml`
 
-Replace `<your.pi.ip>` and `<your.pc.ip>` with real IPs:
+Replace `<host.machine.ip.address>` and `<raspberry.pi.ip.address>` with real IPs:
 
 ```xml
 <Peers>
@@ -74,7 +74,6 @@ On your ROS 2 Jazzy PC:
 ```bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export CYCLONEDDS_URI=file://$HOME/cyclonedds.xml
-ros2 topic list
 ```
 
 > Optional: add those lines to your `.bashrc`
