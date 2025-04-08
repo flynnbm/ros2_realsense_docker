@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  ros2_jazzy:
+    image: flynnbm/ros2-jazzy-realsense:latest
+    container_name: ros2_jazzy_dev
+    network_mode: host
+    privileged: true
+    devices:
+      - "/dev/bus/usb:/dev/bus/usb"
+      - "/dev/video0:/dev/video0"   # Optional
+      - "/dev/video1:/dev/video1"   # Optional
+    volumes:
+      - ./cyclonedds.xml:/root/ros2_ws/cyclonedds.xml
+    environment:
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+      - CYCLONEDDS_URI=file:///root/ros2_ws/cyclonedds.xml
+    stdin_open: true
+    tty: true
