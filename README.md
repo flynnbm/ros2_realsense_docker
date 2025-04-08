@@ -22,7 +22,7 @@ Contains:
 
 - Docker & Docker Compose installed on Raspberry Pi 5
 - RealSense camera (D435i tested)
-- USB 2.0 or 3.0 cable (USB 3.0 strongly preferred if functional)
+- USB 2.0 or 3.0 cable (USB 3.0 strongly preferred if functional, USB 3.0 ports on Raspberry Pi occasionally present issues)
 - Another machine with ROS 2 Jazzy installed (for remote visualization)
 
 ## ⚙️ Setup Instructions
@@ -30,7 +30,7 @@ Contains:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/ros2_realsense_docker.git
+git clone https://github.com/flynnbm/ros2_realsense_docker.git
 cd ros2_realsense_docker
 ```
 
@@ -40,8 +40,8 @@ Replace `<your.pi.ip>` and `<your.pc.ip>` with real IPs:
 
 ```xml
 <Peers>
-  <Peer address="<your.pi.ip>"/>
-  <Peer address="<your.pc.ip>"/>
+  <Peer address="<host.machine.ip.address>"/>
+  <Peer address="<raspberry.pi.ip.address>"/>
 </Peers>
 ```
 
@@ -64,7 +64,7 @@ docker exec -it ros2_jazzy_dev bash
 Inside the container:
 
 ```bash
-ros2 launch realsense2_camera rs_launch.py
+ros2 launch realsense2_camera rs_pointcloud_launch.py
 ```
 
 ### 5. View on main PC
