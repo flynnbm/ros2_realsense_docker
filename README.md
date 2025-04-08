@@ -27,14 +27,27 @@ Contains:
 
 ## Setup Instructions
 
-### 1. Clone the repository
+### 1. Installing Docker & Compose on the Pi
+
+```bash
+sudo apt update
+sudo apt install docker.io docker-compose
+```
+
+If `docker compose` doesn't work, use the legacy:
+
+```bash
+docker-compose up -d
+```
+
+### 2. Clone the repository
 
 ```bash
 git clone https://github.com/flynnbm/ros2_realsense_docker.git
 cd ros2_realsense_docker
 ```
 
-### 2. Create or edit `cyclonedds.xml`
+### 3. Create or edit `cyclonedds.xml`
 
 Replace `<host.machine.ip.address>` and `<raspberry.pi.ip.address>` with real IPs:
 
@@ -47,13 +60,11 @@ Replace `<host.machine.ip.address>` and `<raspberry.pi.ip.address>` with real IP
 
 Place this file in the repository root (next to `docker-compose.yml`).
 
-### 3. Start the container
+### 4. Start the container
 
 ```bash
 docker-compose up -d
 ```
-If docker-compose isn't already installed:
-[Installing Docker & Compose](#-installing-docker--compose-on-the-pi)
 
 Then enter the container:
 
@@ -61,7 +72,7 @@ Then enter the container:
 docker exec -it ros2_jazzy_dev bash
 ```
 
-### 4. Launch the RealSense node
+### 5. Launch the RealSense node
 
 Inside the container:
 
@@ -69,7 +80,7 @@ Inside the container:
 ros2 launch realsense2_camera rs_pointcloud_launch.py
 ```
 
-### 5. View on main PC
+### 6. View on main PC
 
 On your ROS 2 Jazzy PC:
 
@@ -105,19 +116,6 @@ To remove just this image:
 docker stop ros2_jazzy_dev
 docker rm ros2_jazzy_dev
 docker rmi flynnbm/ros2-jazzy-realsense:latest
-```
-
-## Installing Docker & Compose on the Pi
-
-```bash
-sudo apt update
-sudo apt install docker.io docker-compose
-```
-
-If `docker compose` doesn't work, use the legacy:
-
-```bash
-docker-compose up -d
 ```
 
 ## Future Improvements
