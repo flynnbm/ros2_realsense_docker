@@ -1,8 +1,8 @@
-# 🚀 ROS 2 Jazzy + RealSense Docker Setup for Raspberry Pi 5
+# ROS 2 Jazzy + RealSense Docker Setup for Raspberry Pi 5
 
 This repository provides a complete setup for running a RealSense D435i camera with ROS 2 Jazzy inside a Docker container on a Raspberry Pi 5. It includes networking via CycloneDDS, and is built for plug-and-play ROS 2 device streaming across machines.
 
-## 📦 Docker Image
+## Docker Image
 
 Pre-built image is hosted on Docker Hub:
 
@@ -18,14 +18,14 @@ Contains:
 - Tools like `rs-enumerate-devices`, `udev`, `nano`
 - Prebuilt `/root/ros2_ws` with RealSense launch files
 
-## 🧰 Requirements
+## Requirements
 
 - Docker & Docker Compose installed on Raspberry Pi 5
 - RealSense camera (D435i tested)
 - USB 2.0 or 3.0 cable (USB 3.0 strongly preferred if functional, USB 3.0 ports on Raspberry Pi occasionally present issues)
 - Another machine with ROS 2 Jazzy installed (for remote visualization)
 
-## ⚙️ Setup Instructions
+## ⚙Setup Instructions
 
 ### 1. Clone the repository
 
@@ -77,16 +77,16 @@ export CYCLONEDDS_URI=file://$HOME/cyclonedds.xml
 ros2 topic list
 ```
 
-> 📌 Optional: add those lines to your `.bashrc`
+> Optional: add those lines to your `.bashrc`
 
-## 🔧 Notes and Tips
+## Notes and Tips
 
-- ✅ Plug the RealSense camera **into the Pi before starting the container**  
+- Plug the RealSense camera **into the Pi before starting the container**  
   If not detected, restart the container after plugging it in
-- ✅ USB 3.0 works best, but some cables or ports may be unreliable — USB 2.0 fallback can still stream
-- ✅ If topics aren't showing up on your PC, confirm IPs are correct in `cyclonedds.xml`
-- ✅ Container is configured to source `/root/ros2_ws/install/setup.bash` automatically
-- ✅ `ros2-jazzy-realsense` image is prebuilt, so users don’t need to rebuild anything
+- USB 3.0 works best, but some cables or ports may be unreliable — USB 2.0 fallback can still stream
+- If topics aren't showing up on your PC, confirm IPs are correct in `cyclonedds.xml`
+- Container is configured to source `/root/ros2_ws/install/setup.bash` automatically
+- 'ros2-jazzy-realsense` image is prebuilt, so users don’t need to rebuild anything
 
 ## 🧪 Reset Docker Environment (optional)
 
@@ -106,7 +106,7 @@ docker rm ros2_jazzy_dev
 docker rmi flynnbm/ros2-jazzy-realsense:latest
 ```
 
-## 📦 Installing Docker & Compose on the Pi
+## Installing Docker & Compose on the Pi
 
 ```bash
 sudo apt update
@@ -119,7 +119,7 @@ If `docker compose` doesn't work, use the legacy:
 docker-compose up -d
 ```
 
-## 📝 Future Improvements
+## Future Improvements
 
 - Auto-launch realsense node on container start
 - Add support for other camera/gripper combinations
