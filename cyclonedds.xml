@@ -1,0 +1,13 @@
+<CycloneDDS>
+  <Domain>
+    <General>
+      <AllowMulticast>true</AllowMulticast>
+    </General>
+    <Discovery>
+      <Peers>
+        <Peer address="<host.machine.ip.address>"/>
+        <Peer address="<raspberry.pi.ip.address>"/>
+      </Peers>
+    </Discovery>
+  </Domain>
+</CycloneDDS>
