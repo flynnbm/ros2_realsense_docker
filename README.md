@@ -34,12 +34,6 @@ sudo apt update
 sudo apt install docker.io docker-compose
 ```
 
-If `docker compose` doesn't work, use the legacy:
-
-```bash
-docker-compose up -d
-```
-
 ### 2. Clone the repository
 
 ```bash
